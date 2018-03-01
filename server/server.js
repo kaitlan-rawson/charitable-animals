@@ -119,7 +119,7 @@ app.get('/logout', (req,res)=>{
 })
 
 //--------Main/Home Page Axios Calls--------//
-app.get('/main/animals', (req,res)=>{
+app.get('/api/main/animals', (req,res)=>{
     const db = app.get('db');
     db.animals.get_animals_main()
     .then(resp=>{
@@ -128,7 +128,7 @@ app.get('/main/animals', (req,res)=>{
 })
 
 //--------Dropdown Axios Calls--------//
-app.get('/all/animals', (req,res)=>{
+app.get('/api/all/animals', (req,res)=>{
     const db = app.get('db')
     db.animals.get_all_animals()
     .then(resp=>{
@@ -136,7 +136,7 @@ app.get('/all/animals', (req,res)=>{
     })
 })
 
-app.get('/endangered/animals', (req,res)=>{
+app.get('/api/endangered/animals', (req,res)=>{
     const db = app.get('db')
     db.animals.get_endangered_animals()
     .then(resp=>{
@@ -144,7 +144,7 @@ app.get('/endangered/animals', (req,res)=>{
     })
 })
 
-app.get('/extinct/animals', (req,res)=>{
+app.get('/api/extinct/animals', (req,res)=>{
     const db = app.get('db')
     db.animals.get_extinct_animals()
     .then(resp=>{
@@ -152,7 +152,7 @@ app.get('/extinct/animals', (req,res)=>{
     })
 })
 
-app.get('/animal/:name', (req,res)=>{
+app.get('/api/animal/:name', (req,res)=>{
     const db = app.get('db')
     let search = req.params.name.split('_').join(' ')
     db.animals.get_animal_info(search)
@@ -162,7 +162,7 @@ app.get('/animal/:name', (req,res)=>{
 })
 
 //--------User Axios Calls--------//
-app.post('/animal/subscribe', (req,res)=>{
+app.post('/api/animal/subscribe', (req,res)=>{
     const db = app.get('db')
     db.animals.add_subscribed_animal(req.body.animalID, req.user.id)
     .then(resp=>{
@@ -170,7 +170,7 @@ app.post('/animal/subscribe', (req,res)=>{
     })
 })
 
-app.put('/monthly/donation', (req,res)=>{
+app.put('/api/monthly/donation', (req,res)=>{
     const db = app.get('db')
     db.animals.findOne({
         name: req.body.animalName
@@ -184,7 +184,7 @@ app.put('/monthly/donation', (req,res)=>{
     })
 })
 
-app.get('/user/subscribed', (req,res)=>{
+app.get('/api/user/subscribed', (req,res)=>{
     const db = app.get('db')
     db.subscribed_animals.find({user_id: req.user.id}) 
     .then(resp=>{
@@ -192,7 +192,7 @@ app.get('/user/subscribed', (req,res)=>{
     })
 })
 
-app.get('/favAnimals', (req,res)=>{
+app.get('/api/favAnimals', (req,res)=>{
     const db = app.get('db')
     db.animals.get_fav_animals([req.user.id])
     .then(resp=>{
@@ -200,7 +200,7 @@ app.get('/favAnimals', (req,res)=>{
     })
 })
 
-app.delete('/delete/favAnimals/:id', (req,res)=>{
+app.delete('/api/delete/favAnimals/:id', (req,res)=>{
     const db = app.get('db')
     db.animals.unsubscribe([req.params.id, req.user.id])
     .then(resp=>{

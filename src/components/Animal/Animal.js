@@ -18,7 +18,7 @@ class Animal extends Component {
     }
 
     componentDidMount(){
-        axios.get('/animal/' + this.props.match.params.name)
+        axios.get('/api/animal/' + this.props.match.params.name)
             .then(res=>{
                 this.setState({
                     animal: res.data

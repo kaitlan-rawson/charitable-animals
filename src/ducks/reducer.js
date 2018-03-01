@@ -31,7 +31,7 @@ export function setUser(val){
 export function getMainAnimals(){
     return {
         type: GET_MAIN_ANIMALS,
-        payload: axios.get('/main/animals')
+        payload: axios.get('/api/main/animals')
         .then(resp=>{
             return resp.data
         })
@@ -41,7 +41,7 @@ export function getMainAnimals(){
 export function getAllAnimals(){
     return {
         type: GET_ALL_ANIMALS,
-        payload: axios.get('/all/animals')
+        payload: axios.get('/api/all/animals')
         .then(resp=>{
             return resp.data
         })
@@ -51,7 +51,7 @@ export function getAllAnimals(){
 export function getEndangeredAnimals(){
     return {
         type: GET_ENDANGERED_ANIMALS,
-        payload: axios.get('/endangered/animals')
+        payload: axios.get('/api/endangered/animals')
         .then(resp=>{
             return resp.data
         })
@@ -61,7 +61,7 @@ export function getEndangeredAnimals(){
 export function getExtinctAnimals(val){
     return {
         type: GET_EXTINCT_ANIMALS,
-        payload: axios.get('/extinct/animals')
+        payload: axios.get('/api/extinct/animals')
         .then(resp=>{
             return resp.data
         })
@@ -71,7 +71,7 @@ export function getExtinctAnimals(val){
 export function checkSubscribedAnimals(){
     return {
         type: CHECK_SUBSCRIBED_ANIMALS,
-        payload: axios.get('/user/subscribed')
+        payload: axios.get('/api/user/subscribed')
         .then(resp=>{
             return resp.data
         })
@@ -81,7 +81,7 @@ export function checkSubscribedAnimals(){
 export function addFavAnimal(id){
     return {
         type: ADD_FAV_ANIMAL,
-        payload: axios.post('/animal/subscribe', {animalID: id})
+        payload: axios.post('/api/animal/subscribe', {animalID: id})
         .then(resp=>{
             return resp.data
         })
@@ -91,7 +91,7 @@ export function addFavAnimal(id){
 export function checkUserSubscribedAnimals(){
     return {
         type: CHECK_USER_SUBSCRIBED_ANIMALS,
-        payload: axios.get('/user/subscribed')
+        payload: axios.get('/api/user/subscribed')
         .then(resp => {
            return resp.data 
         })
@@ -101,7 +101,7 @@ export function checkUserSubscribedAnimals(){
 export function getFavAnimals(){
     return {
         type: GET_FAV_ANIMALS,
-        payload: axios.get('/favAnimals')
+        payload: axios.get('/api/favAnimals')
         .then(resp => {
             return resp.data
         })
@@ -111,7 +111,7 @@ export function getFavAnimals(){
 export function unsubscribe(id){
     return {
         type: UNSUBSCRIBE,
-        payload: axios.delete(`/delete/favAnimals/${id}`)
+        payload: axios.delete(`/api/delete/favAnimals/${id}`)
         .then(resp => {
             return resp.data
         })

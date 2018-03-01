@@ -38,7 +38,7 @@ class User extends Component {
     }
 
     handleDonateMonthly(name){
-        axios.put('/monthly/donation', {animalName: name} )
+        axios.put('/api/monthly/donation', {animalName: name} )
         .then(resp=> {
             this.setState({
                 donateMonthly: true
