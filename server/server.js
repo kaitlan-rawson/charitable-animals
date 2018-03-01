@@ -7,6 +7,7 @@ const express = require('express')
     , massive = require('massive')
     , stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
     , { joesPennyFunction } = require('./joesPennyFunction')
+    , path = require('path')
 
 const {
     SERVER_PORT,
