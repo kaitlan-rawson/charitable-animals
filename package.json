@@ -1,0 +1,40 @@
+{
+  "name": "charitable-animal",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./server/server.js",
+  "proxy": "http://localhost:3005",
+  "build-css": "node-sass-chokidar src/ -o src",
+  "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "massive": "^4.6.4",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
+    "passport": "^0.4.0",
+    "passport-auth0": "^0.6.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-stripe-checkout": "^2.6.3",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-promise-middleware": "^5.0.0",
+    "stripe": "^5.5.0"
+  },
+  "scripts": {
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
+    "build": "npm run build-css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+  }
+}

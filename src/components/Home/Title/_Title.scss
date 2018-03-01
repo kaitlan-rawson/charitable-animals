@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+.above-fold {
+  background-image: url('https://wallpaperclicker.com/storage/wallpaper/waterfall-wallpaper-hd-62971036.jpg');
+  /* https://i.imgur.com/BoloeNc.gif */
+  // https://wallpapercave.com/wp/axWLfH4.jpg
+  /* http://media0.giphy.com/media/T7ub9teZ7v0ty/giphy.gif */
+  // http://hddesktopwallpapers.in/wp-content/uploads/2015/09/hd-waterfall-wallpaper.jpg
+  // https://wallpaperclicker.com/storage/wallpaper/waterfall-wallpaper-hd-62971036.jpg
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height:100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  
+  .title {
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    font-style: italic;
+    margin: auto;
+    padding: 80px 30px;
+    width: 80vw;
+    height: fit-content;
+    border: solid white;
+  }
+}
+
+
+

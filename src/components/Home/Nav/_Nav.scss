@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+$background-color: rgba(0,0,0,0.4);
+$font-size: 30px;
+$font-family: 'Open Sans Condensed';
+
+.Nav {
+    display: grid;
+    grid-template-columns: 400px 1fr 230px 170px;
+    width: 100vw;
+    // position: relative;
+    background-color: $background-color;
+    font-family: $font-family;
+
+    .navlink {
+        color: white;
+        text-decoration: none;
+        padding: 14px 16px;
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        font-size: $font-size;
+        font-family: $font-family;     
+    }
+
+    .logo {
+        float: left;
+        font-size: 50px;
+        font-family: 'Cookie', cursive;
+    }
+
+    .middle-super {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    .middle-links {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-items: center;
+        width: fit-content;
+    }
+
+    .animal-dropdown-container {
+    float: left;
+    // overflow: hidden;
+    font-family:  $font-family;
+    font-size: $font-size;
+    position: relative;
+        
+        .dropdown-bridge {
+        height:20px;
+        width: 100%;
+        top: 50px;
+        position: absolute;
+        display: none;
+        }
+
+        .animal-dropdown-button {
+        border: none;
+        outline: none;
+        margin: 0;
+        }
+
+        .animal-dropdown-content {
+        display: none;
+        position: absolute;
+        top: 67px;
+        background-color: $background-color;
+        z-index: 1;
+        min-width: 160px;
+
+        }
+        .animal-dropdown-content-links {
+            float: none;
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 25px;
+        }
+}
+
+    .animal-dropdown-container:hover .animal-dropdown-content {
+        display: block;
+    }
+
+    .animal-dropdown-container:hover .dropdown-bridge {
+        display: block;
+    }
+
+    .login {
+        padding-right: 60px;
+
+    }
+    
+    .logout{
+        cursor: pointer;
+    }
+}
