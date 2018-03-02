@@ -19,6 +19,15 @@ export default function News (props){
             <div className = 'news-links'><a href = 'https://theconversation.com/us/topics/wildlife-conservation-4235'> ❈ The Conversation ❈ </a></div>
             <div className = 'news-links'><a href = 'https://www.livescience.com/topics/conservation'> ❈ Live Science ❈ </a></div>
 
+            <div className = 'news-desc'>
+            There are also several amazing sites that you can watch live videos of animals! 
+            </div> 
+            <div className = 'news-links'> <a href = 'https://explore.org/livecams/african-wildlife/african-safari-camera'> ❈ African Wildlife ❈ </a></div>
+            <div className = 'news-links'> <a href = 'http://animals.sandiegozoo.org/live-cams'> ❈ San Diego Zoo Live Cam ❈ </a></div>
+            <div className = 'news-links'> <a href = 'http://www.mangolinkcam.com'> ❈ Mangolink (lists multiple cam sites) ❈ </a></div>
+            
+
+
         </div>
     )
 }
