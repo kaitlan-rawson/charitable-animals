@@ -14,7 +14,7 @@ class Modal extends Component {
             <div onClick = {()=>this.handleClick('backdrop')} className = 'backdropStyle' name = 'backdrop'>
                 <div className = 'midModal'> 
                     <div onClick = {()=>this.handleClick('modal')} className = 'modalStyle'>
-                    Please login to subscribe to this animal
+                        Please login to subscribe to this animal
                     </div>
                 </div> 
             </div>

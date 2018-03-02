@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { getFavAnimals } from '../../ducks/reducer'
 import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout'
+
+import { getFavAnimals } from '../../ducks/reducer'
 
 
 
@@ -26,7 +27,7 @@ class User extends Component {
         let newDonate = Object.assign({},this.state.donateAmounts)
         newDonate[e.target.name] = e.target.value[0] === '$' ? e.target.value : '$' + e.target.value 
 
-        let total = Object.values(newDonate).reduce((sum,val)=>{
+        let total = Object.values(newDonate).reduce((sum,val) => {
             let newVal = val.slice(1) * 1 
             return sum + newVal
         }, 0) * 100 
@@ -39,7 +40,7 @@ class User extends Component {
 
     handleDonateMonthly(name){
         axios.put('/api/monthly/donation', {animalName: name} )
-        .then(resp=> {
+        .then(resp => {
             this.setState({
                 donateMonthly: true
             })
@@ -58,7 +59,7 @@ class User extends Component {
     render(){
         let favAnimals = null
         if (this.props.favAnimals){
-            favAnimals = this.props.favAnimals.map((val, i)=>{
+            favAnimals = this.props.favAnimals.map((val, i) => {
             let url = val.name.split(' ').join('_')
             return (
                 <div className = 'user-homepage' key = {i}>
@@ -71,7 +72,7 @@ class User extends Component {
                         </div>
                         <div>
                             <div className = 'donate-monthly'>
-                            <input className = 'checkbox' type = 'checkbox' onClick = {()=>this.handleDonateMonthly(val.name)}/>
+                            <input className = 'checkbox' type = 'checkbox' onClick = {() => this.handleDonateMonthly(val.name)}/>
                             Donate Monthly
                             </div>
                             One-time Donation
@@ -79,7 +80,7 @@ class User extends Component {
                                 className = 'one-time-donation'
                                 name = {val.name} 
                                 value = {this.state.donateAmounts[val.name] || '$'} 
-                                onChange = {(e)=>this.handleInput(e)}>
+                                onChange = {(e) => this.handleInput(e)}>
                             </input>
                         </div>
                     </div>
@@ -122,4 +123,4 @@ function mapStateToProps(state){
     }    
 }
 
-export default connect(mapStateToProps, {getFavAnimals})(User)
+export default connect( mapStateToProps, {getFavAnimals} )(User)

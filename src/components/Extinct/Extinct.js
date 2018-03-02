@@ -10,8 +10,10 @@ class Extinct extends Component {
     } 
 
     render(){
+
         let animal = this.props.animals.map((val,i)=>{
-            let url = val.name.split(' ').join('_')
+        let url = val.name.split(' ').join('_')
+
             return (
                 <div className = 'extinct-animals' key = {i}>
                     <div className = 'extinct-content'>
@@ -32,7 +34,7 @@ class Extinct extends Component {
                     <h1> Poor bastards </h1>
                 </div>
                 <div className = 'extinct-animals'>
-                {animal}
+                    {animal}
                 </div>
             </div>
         )
@@ -45,4 +47,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {getExtinctAnimals})(Extinct)
+export default connect( mapStateToProps, {getExtinctAnimals} )(Extinct)

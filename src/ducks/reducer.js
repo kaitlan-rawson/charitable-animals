@@ -32,7 +32,7 @@ export function getMainAnimals(){
     return {
         type: GET_MAIN_ANIMALS,
         payload: axios.get('/api/main/animals')
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -42,7 +42,7 @@ export function getAllAnimals(){
     return {
         type: GET_ALL_ANIMALS,
         payload: axios.get('/api/all/animals')
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -52,7 +52,7 @@ export function getEndangeredAnimals(){
     return {
         type: GET_ENDANGERED_ANIMALS,
         payload: axios.get('/api/endangered/animals')
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -62,7 +62,7 @@ export function getExtinctAnimals(val){
     return {
         type: GET_EXTINCT_ANIMALS,
         payload: axios.get('/api/extinct/animals')
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -72,7 +72,7 @@ export function checkSubscribedAnimals(){
     return {
         type: CHECK_SUBSCRIBED_ANIMALS,
         payload: axios.get('/api/user/subscribed')
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -82,7 +82,7 @@ export function addFavAnimal(id){
     return {
         type: ADD_FAV_ANIMAL,
         payload: axios.post('/api/animal/subscribe', {animalID: id})
-        .then(resp=>{
+        .then(resp => {
             return resp.data
         })
     }
@@ -141,7 +141,6 @@ export default function reducer(state=initialState,action){
         case UNSUBSCRIBE + '_FULFILLED': 
             return Object.assign({}, state,{subscribedAnimals: action.payload})
         case ADD_FAV_ANIMAL + '_FULFILLED':
-            
             let temp = state.subscribedAnimals.slice()
             temp.push(action.payload.animal_id)
             return Object.assign({}, state,{subscribedAnimals: temp})

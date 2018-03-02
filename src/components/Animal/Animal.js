@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { checkSubscribedAnimals, checkUserSubscribedAnimals, unsubscribe, addFavAnimal } from '../../ducks/reducer'
 import axios from 'axios'
 import Modal from './Modal'
+
+import { checkSubscribedAnimals, checkUserSubscribedAnimals, unsubscribe, addFavAnimal } from '../../ducks/reducer'
 
 class Animal extends Component {
     constructor(props){
@@ -19,7 +20,7 @@ class Animal extends Component {
 
     componentDidMount(){
         axios.get('/api/animal/' + this.props.match.params.name)
-            .then(res=>{
+            .then(res => {
                 this.setState({
                     animal: res.data
                 })
@@ -61,18 +62,20 @@ class Animal extends Component {
     }
 
     render(){
+
         let {animal} = this.state
         let subscribed = this.props.subscribedAnimals.includes(this.state.animal.id)
+
         return(
             <section className = 'animal-main'>
                 <div className = 'individual-animal'>
                     <div className = 'individual-animal-name'> 
                         {animal.name}
                     </div>
-                        <img src = {animal.pic1} alt = '' className = 'individual-animal-image'/>
+                    <img src = {animal.pic1} alt = '' className = 'individual-animal-image'/>
                     <div className = 'individual-animal-fact'>
                         <div className = 'individual-fact'>
-                        {animal.desc1}
+                            {animal.desc1}
                         </div>
                     </div>
                 </div>
@@ -81,23 +84,23 @@ class Animal extends Component {
                         <img src = {animal.pic2} alt = '' className = 'individual-animal-image'/>
                     <div className = 'individual-animal-fact'>
                         <div className = 'individual-fact'>
-                        {animal.desc2}
+                            {animal.desc2}
                         </div>
                     </div>
                     <div className = 'individual-animal'>
                     </div>
-                        <img src = {animal.pic3} alt = '' className = 'individual-animal-image'/>
+                    <img src = {animal.pic3} alt = '' className = 'individual-animal-image'/>
                     <div className = 'individual-animal-fact'>
                         <div className = 'individual-fact'>
-                        {animal.desc3}
+                            {animal.desc3}
                         </div>
                     </div>
                     <div className = 'individual-animal'>
                     </div>
-                        <img src = {animal.pic4} alt = '' className = 'individual-animal-image'/>
+                    <img src = {animal.pic4} alt = '' className = 'individual-animal-image'/>
                     <div className = 'individual-animal-fact'>
                         <div className = 'individual-fact'>
-                        {animal.desc4}
+                            {animal.desc4}
                         </div>
                     </div>
                     {this.state.showModal ?  <Modal close = {this.closeModal}/> : null}
@@ -116,4 +119,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {checkSubscribedAnimals, checkUserSubscribedAnimals, unsubscribe, addFavAnimal})(Animal)
+export default connect( mapStateToProps, {checkSubscribedAnimals, checkUserSubscribedAnimals, unsubscribe, addFavAnimal} )(Animal)

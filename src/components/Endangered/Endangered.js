@@ -10,8 +10,10 @@ class Endangered extends Component {
    } 
 
     render(){
+
         let endangered = this.props.animals.map((val,i)=>{
-            let url = val.name.split(' ').join('_')
+        let url = val.name.split(' ').join('_')
+
             return (
                 <div className = 'endangered-animals' key = {i}>
                     <div className = 'endangered-animal' key = {i}>
@@ -47,4 +49,4 @@ function mapStateToProps(state){
         animals: state.animals
     }
 }
-export default connect(mapStateToProps, {getEndangeredAnimals})(Endangered)
+export default connect( mapStateToProps, {getEndangeredAnimals} )(Endangered)

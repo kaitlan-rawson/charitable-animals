@@ -10,8 +10,10 @@ class AllAnimals extends Component {
     }
 
     render(){
+
         let animal = this.props.animals.map((val,i)=>{
-            let url = val.name.split(' ').join('_')
+        let url = val.name.split(' ').join('_')
+
             return (
                 <div className = 'animal' key = {i}>
                     <div className = 'animal-content'>
@@ -32,7 +34,7 @@ class AllAnimals extends Component {
                     <h1> All Animals </h1>
                 </div>
                 <div className = 'animal'>
-                {animal}
+                    {animal}
                 </div>
             </div>
         )
@@ -45,4 +47,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {getAllAnimals})(AllAnimals)
+export default connect( mapStateToProps, {getAllAnimals} )(AllAnimals)

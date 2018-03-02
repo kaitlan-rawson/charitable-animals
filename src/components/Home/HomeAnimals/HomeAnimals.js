@@ -10,8 +10,10 @@ class HomeAnimals extends Component {
      }
 
     render(){
+
         let mainAnimals = this.props.animals.map((val,i) =>{
-            let url = val.name.split(' ').join('_')
+        let url = val.name.split(' ').join('_')
+
             return (
                 <div className = 'main-animal' key = {i}>
                     <div className = 'main-animal-content'>
@@ -42,4 +44,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {getMainAnimals})(HomeAnimals)
+export default connect( mapStateToProps, {getMainAnimals} )(HomeAnimals)
