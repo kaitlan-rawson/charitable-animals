@@ -65,27 +65,45 @@ class Animal extends Component {
         let subscribed = this.props.subscribedAnimals.includes(this.state.animal.id)
         return(
             <section className = 'animal-main'>
-                {animal.name}
-                <img src = {animal.pic1} alt = '' className = 'animal-main-img'/>
-                <section className = 'animal-facts-container'>
-                    {animal.desc1}
-                    <div className = 'animal-facts'>
-                        <img src = {animal.pic2} alt = '' className = 'animal-image'/>
-                        <div className = 'animal-desc'>{animal.desc2}</div>
+                <div className = 'individual-animal'>
+                    <div className = 'individual-animal-name'> 
+                        {animal.name}
                     </div>
-                    <div className = 'animal-facts'>
-                        <img src = {animal.pic3} alt = '' className = 'animal-image'/>
-                        <div className = 'animal-desc'>{animal.desc3}</div>
+                        <img src = {animal.pic1} alt = '' className = 'individual-animal-image'/>
+                    <div className = 'individual-animal-fact'>
+                        <div className = 'individual-fact'>
+                        {animal.desc1}
+                        </div>
                     </div>
-                    <div className = 'animal-facts'>
-                        <img src = {animal.pic4} alt = '' className = 'animal-image'/>
-                        <div className = 'animal-desc'>{animal.desc4}</div>
+                </div>
+                <div className = 'individual-animal'>
+                    </div>
+                        <img src = {animal.pic2} alt = '' className = 'individual-animal-image'/>
+                    <div className = 'individual-animal-fact'>
+                        <div className = 'individual-fact'>
+                        {animal.desc2}
+                        </div>
+                    </div>
+                    <div className = 'individual-animal'>
+                    </div>
+                        <img src = {animal.pic3} alt = '' className = 'individual-animal-image'/>
+                    <div className = 'individual-animal-fact'>
+                        <div className = 'individual-fact'>
+                        {animal.desc3}
+                        </div>
+                    </div>
+                    <div className = 'individual-animal'>
+                    </div>
+                        <img src = {animal.pic4} alt = '' className = 'individual-animal-image'/>
+                    <div className = 'individual-animal-fact'>
+                        <div className = 'individual-fact'>
+                        {animal.desc4}
+                        </div>
                     </div>
                     {this.state.showModal ?  <Modal close = {this.closeModal}/> : null}
                     {subscribed ? 
-                        <button className = 'unsubscribe-button' onClick = {()=>{this.handleUnsubscribe()}}> Unsubscribe </button> : 
-                        <button className = 'subscribe-button' onClick = {()=>{this.handleSubscribe()}}> Subscribe </button>}
-                </section>
+                        <div className = 'animal-button'><button className = 'unsubscribe-button' onClick = {()=>{this.handleUnsubscribe()}}> Unsubscribe </button></div> : 
+                        <div className = 'animal-button'><button className = 'subscribe-button' onClick = {()=>{this.handleSubscribe()}}> Subscribe </button></div>}
             </section>
         )
     }
