@@ -26,6 +26,11 @@ $font-size: 20px;
             font-family: $font-family;
             font-size: $font-size;
             
+            
+            .donate-monthly {
+                padding-left: 80px;
+            }
+
             .fav-image {
                 width: 300px;
                 height: 300px;
@@ -42,7 +47,13 @@ $font-size: 20px;
         .total {
             font-family: $font-family;
             font-size: 50px;
+            font-weight: bold;
         }
+
+        .donate {
+            height: 20vh;
+        }
+
     #checkbox {
         width: 17px;
         height: 17px;

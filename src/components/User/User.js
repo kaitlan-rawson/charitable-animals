@@ -70,12 +70,13 @@ class User extends Component {
                             {val.name}
                         </div>
                         <div>
-                            <div>
-                            <input id = 'checkbox' type = 'checkbox' onClick = {()=>this.handleDonateMonthly(val.name)}/>
+                            <div className = 'donate-monthly'>
+                            <input className = 'checkbox' type = 'checkbox' onClick = {()=>this.handleDonateMonthly(val.name)}/>
                             Donate Monthly
                             </div>
                             One-time Donation
                             <input 
+                                className = 'one-time-donation'
                                 name = {val.name} 
                                 value = {this.state.donateAmounts[val.name] || '$'} 
                                 onChange = {(e)=>this.handleInput(e)}>
@@ -100,16 +101,15 @@ class User extends Component {
                 </div>
                 <div className = 'total'>
                     Total: ${this.state.amount / 100}
-                </div>
-                <div className = 'donate'>
-                    <StripeCheckout 
-                        token = {this.onToken}
-                        stripeKey = {process.env.REACT_APP_STRIPE_PUBLIC_KEY}
-                        amount = {this.state.amount}
-                        name = 'Charitable Animals'
-                        description = 'Donate to help conservation efforts!'
-                        label = 'Multi-Donate'
-                    />
+
+                <span><StripeCheckout 
+                token = {this.onToken}
+                stripeKey = {process.env.REACT_APP_STRIPE_PUBLIC_KEY}
+                amount = {this.state.amount}
+                name = 'Charitable Animals'
+                description = 'Donate to help conservation efforts!'
+                label = 'Multi-Donate'
+                /></span>
                 </div>
             </div>
         )
