@@ -102,14 +102,14 @@ class User extends Component {
                 <div className = 'total'>
                     Total: ${this.state.amount / 100}
 
-                <span className = 'donate'><StripeCheckout 
+                <div><StripeCheckout 
                 token = {this.onToken}
                 stripeKey = {process.env.REACT_APP_STRIPE_PUBLIC_KEY}
                 amount = {this.state.amount}
                 name = 'Charitable Animals'
                 description = 'Donate to help conservation efforts!'
                 label = 'Multi-Donate'
-                /></span>
+                /></div>
                 </div>
             </div>
         )
