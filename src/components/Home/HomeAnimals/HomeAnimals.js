@@ -13,7 +13,7 @@ class HomeAnimals extends Component {
         let mainAnimals = this.props.animals.map((val,i) =>{
             let url = val.name.split(' ').join('_')
             return (
-                <div className = 'main-animals' key = {i}>
+                <div className = 'main-animal' key = {i}>
                     <div className = 'main-animal-content'>
                         <Link to = {`/animal/${url}`}><div className = 'main-animal-images'>
                             <img src = {val.pic1} alt = '' className = 'image'/>

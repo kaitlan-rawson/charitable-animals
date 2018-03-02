@@ -6,14 +6,19 @@ $font-size: 20px;
 .main-animals {
     margin-top: 0;
     border-radius: 0;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    width: auto;
     padding: 2.5%;
     font-family: $font-family;
     font-size: $font-size;
     background-color: #242323;
-    justify-content: center;
+    justify-content: space-around;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 20px;
     
+    .main-animal {
+
+    }
     
     .image {
         width: 250px;
