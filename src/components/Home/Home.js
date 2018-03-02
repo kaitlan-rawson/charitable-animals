@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Parallax } from 'react-parallax'
 
 import Main from './Main/Main'
 import Title from './Title/Title'
