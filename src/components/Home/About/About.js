@@ -14,7 +14,9 @@ class About extends Component {
                         About the website
                     </div>
                     <div className = 'about-desc'>
-                        This site allows you to learn about some of the amazing animals the world has (or in some cases had) to offer. You're able to look at amazing pictures along with some facts about the animal. You can then log in to subscribe and donate to help the conservation, preservation and education of these amazing animals. The website allows you to subscribe and set an exact amount to each animal and then pay the sum. The specific amounts entered will then be sent to the appropriate animal. 
+                        This site allows you to learn about some of the amazing animals the world has (or in some cases had) to offer. You're able to look at amazing pictures along with some facts about the animal. You can then log in to subscribe and donate to help the conservation, preservation and education of these amazing animals. The website allows you to subscribe and set an exact amount to each animal and then pay the sum. The specific amounts entered will then be sent to the appropriate animal.
+                        <br></br><br></br>If you would like to login with test data you can use the information: 
+                        <b> Email:</b> test@test.com  and <b> Password: </b> TestPassword1!
                     </div> 
                     <div className = 'about-sub'>
                         About the Dev
